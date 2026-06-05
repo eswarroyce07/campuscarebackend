@@ -13,8 +13,9 @@ mongoose.set('strictQuery', false);
 app.use(cors({
   origin: [
     'http://localhost:3000',
+    'https://college-cc.onrender.com',
     'https://campuscare.onrender.com',
-    'https://campuscareee.netlify.app',
+    'https://campuscareeee.netlify.app',
     /\.onrender\.com$/,
     /\.netlify\.app$/,
     /\.vercel\.app$/,
