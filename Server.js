@@ -8,7 +8,16 @@ const contactRouter = require('./Routers/ContactRouter');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://campuscare.onrender.com',
+    /\.onrender\.com$/,
+    /\.netlify\.app$/,
+    /\.vercel\.app$/,
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/auth', authRouter);
