@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: backendcc
+    runtime: node
+    buildCommand: npm install
+    startCommand: node Server.js
+    envVars:
+      - key: MONGO_url
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: NODE_ENV
+        value: production
