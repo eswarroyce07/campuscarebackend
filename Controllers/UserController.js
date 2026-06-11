@@ -20,6 +20,7 @@ const signup = async (req, res) => {
 
     res.status(201).json({ message: 'Account created successfully.', user: { id: user._id, firstName, lastName, email, role } });
   } catch (err) {
+    console.error('Signup error:', err);
     res.status(500).json({ message: 'Server error.', error: err.message });
   }
 };
@@ -45,6 +46,7 @@ const login = async (req, res) => {
       user: { id: user._id, firstName: user.firstName, lastName: user.lastName, email: user.email, role: user.role },
     });
   } catch (err) {
+    console.error('Login error:', err);
     res.status(500).json({ message: 'Server error.', error: err.message });
   }
 };

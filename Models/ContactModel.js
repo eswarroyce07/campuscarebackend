@@ -7,6 +7,7 @@ const contactSchema = new mongoose.Schema({
   phone:      { type: String, trim: true },
   department: { type: String, required: true },
   message:    { type: String, required: true },
+  status:     { type: String, enum: ['Pending', 'Resolved'], default: 'Pending' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Contact', contactSchema);
